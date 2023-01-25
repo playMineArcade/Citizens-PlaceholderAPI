@@ -1,10 +1,10 @@
 main: me.citizensplaceholderapi.CitizensPlaceholderAPI
-version: 1.0
+version: ${pluginVersion}
 name: CitizensPlaceholderAPI
 depend: [PlaceholderAPI, Citizens]
-author: TheGaming999
+author: TheGaming999 & MineArcade Development Team
 commands:
   citizensplaceholderapi:
     usage: /<command>
-    description: commando
+    description: The main command for this plugin
     aliases: [citizenspapi, cpapi, cplaceholderapi, npcpapi, npcplaceholderapi]

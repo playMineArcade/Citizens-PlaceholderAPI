@@ -1,0 +1,20 @@
+[versions]
+annotations = "24.0.0"
+titan = "1.0.96-SNAPSHOT"
+indra = "3.1.1-FIX-JAVA-SNAPSHOT"
+paper = "1.12.2-R0.1-SNAPSHOT"
+placeholderapi = "2.11.2"
+citizens = "2.0.30-SNAPSHOT"
+taskchain = "3.7.2"
+
+[libraries]
+annotations = { module = "org.jetbrains:annotations", version.ref = "annotations" }
+paper-api = { module = "com.destroystokyo.paper:paper-api", version.ref = "paper" }
+placeholderapi = { module = "me.clip:placeholderapi", version.ref = "placeholderapi" }
+citizens = { module = "net.citizensnpcs:citizens-main", version.ref = "citizens" }
+taskchain = { module = "co.aikar:taskchain-bukkit", version.ref = "taskchain" }
+
+[plugins]
+titan = { id = "net.deltapvp.titan", version.ref = "titan" }
+indra = { id = "net.deltapvp.indra", version.ref = "indra" }
+indra-publishing = { id = "net.deltapvp.indra.publishing", version.ref = "indra" }

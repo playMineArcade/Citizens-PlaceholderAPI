@@ -1,0 +1,55 @@
+plugins {
+    alias(libs.plugins.indra.publishing)
+    alias(libs.plugins.indra)
+    alias(libs.plugins.titan)
+}
+
+group("org.minearcade")
+
+dependencies {
+    compileOnly(libs.annotations)
+    compileOnly(libs.paper.api)
+    compileOnly(libs.placeholderapi)
+    compileOnly(libs.citizens) {
+        exclude group: "net.byteflux"
+    }
+    api(libs.taskchain)
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name("deltapvp")
+        url("https://repo.deltapvp.net/")
+    }
+}
+
+shadowJar {
+    relocate("co.aikar", "org.minearcade.citizensplaceholderapi.libs.co.aikar")
+}
+
+indra {
+    license {
+        name("The Unlicense")
+        spdx("Unlicense")
+        url("https://opensource.org/licenses/unlicense")
+    }
+    github("playMineArcade", "Citizens-PlaceholderAPI")
+    javaVersions {
+        target(8)
+        minimumToolchain(17)
+    }
+    configurePublications {
+        pom {
+            developers {
+                developer {
+                    id = "powercas_gamer"
+                    timezone = "Europe/Amsterdam"
+                }
+            }
+        }
+    }
+
+    publishReleasesTo("delta", "https://reposilite.deltapvp.net/releases/")
+    publishSnapshotsTo("delta", "https://reposilite.deltapvp.net/snapshots/")
+}
